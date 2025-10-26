@@ -26,15 +26,14 @@ input.addEventListener("keydown", function (event) {
 	if (event.key === "Enter" && !event.shiftKey) {
 		event.preventDefault();
 
-		let deserialized;
 		try {
 			const compiled = compile(this.value).buffer;
-			deserialized = deserializer(compiled);
+			const deserialized = deserializer(compiled);
+			window.alert("Deserialized output in console");
+			console.log(deserialized);
 		} catch (error) {
 			window.alert(error);
 			throw error;
 		};
-
-		newclosure(deserialized.protoList, deserialized.mainProtoIndex)();
 	};
 });
