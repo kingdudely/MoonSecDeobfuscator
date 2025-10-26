@@ -1,6 +1,5 @@
 import LuauCompiler from "./compiler/index.js";
 import deserializer from "./deserializer/index.js";
-import { newclosure } from "./vm/index.js";
 const textEncoder = new TextEncoder("utf-8");
 const { _luau_compile, _malloc, _free, HEAPU8, HEAP32 } = await LuauCompiler();
 
