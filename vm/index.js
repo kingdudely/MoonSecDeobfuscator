@@ -225,7 +225,6 @@ export function newclosure(protoList, protoIndex, globals = {}, upvals = []) {
 				}
 
 				case 21: { // CALL
-					/*
 					const argumentAmount = (B === 0) ? (top - A) : (B - 1);
 					const func = stack[A];
 
@@ -247,12 +246,11 @@ export function newclosure(protoList, protoIndex, globals = {}, upvals = []) {
 					for (let i = 0; i < resultAmount; i++) {
 						stack[A + i] = results[i];
 					};
-*/
+
 					break;
 				};
 
 				case 22: { // RETURN
-					console.log(stack)
 					let resultAmount = B - 1;
 					if (resultAmount === LUA_MULTRET) resultAmount = top - A + 1;
 					return stack.slice(A, A + resultAmount);
